@@ -1,0 +1,20 @@
+{
+	"info": {
+		"_postman_id": "502a8a6d-baca-4746-9484-e57967269817",
+		"name": "mecanismos",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45364389",
+		"_collection_link": "https://lautaro-5688852.postman.co/workspace/lautaro's-Workspace~b5cb0e73-84ad-4efd-872e-bd22924df00a/collection/45364389-502a8a6d-baca-4746-9484-e57967269817?action=share&source=collection_link&creator=45364389"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"description": "**Descripcion:** Generea una imagen aleatoria de perro\n\n**Body:** En la parte del body la peticion que yo hago a la direccion es [StartFragmenthttps://dog.ceo/api/breeds/image/randomEndFragment](https://StartFragmenthttps://dog.ceo/api/breeds/image/randomEndFragment)  \nddonde en este enlase se pide que genera una imagen random.\n\n**Response:** genera un imagen aleatoria con este codigo\n\n{  \n\"message\": \"[https://images.dog.ceo/breeds/pointer-germanlonghair/hans1.jpg\"](https://images.dog.ceo/breeds/pointer-germanlonghair/hans1.jpg),  \n\"status\": \"success\"  \n}"
+			},
+			"response": []
+		}
+	]
+}
