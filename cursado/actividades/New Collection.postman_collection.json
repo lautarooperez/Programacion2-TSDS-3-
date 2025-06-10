@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "74a3d2dc-fedb-47dc-87e6-e3b4af941b20",
+		"name": "New Collection",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45364389"
+	},
+	"item": [
+		{
+			"name": "New Request",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "  {\r\n       \"nombre\": \"pepe\",\r\n       \"edad\" : 50\r\n  } ",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://172.16.202.232/programacionII/cursado/API/public/persona",
+					"protocol": "http",
+					"host": [
+						"172",
+						"16",
+						"202",
+						"232"
+					],
+					"path": [
+						"programacionII",
+						"cursado",
+						"API",
+						"public",
+						"persona"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
