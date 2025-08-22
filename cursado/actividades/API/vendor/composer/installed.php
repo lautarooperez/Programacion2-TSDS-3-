@@ -28,6 +28,15 @@
             'aliases' => array(),
             'dev_requirement' => false,
         ),
+        'firebase/php-jwt' => array(
+            'pretty_version' => 'v5.5.1',
+            'version' => '5.5.1.0',
+            'reference' => '83b609028194aa042ea33b5af2d41a7427de80e6',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../firebase/php-jwt',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
         'nikic/fast-route' => array(
             'pretty_version' => 'v1.3.0',
             'version' => '1.3.0.0',
@@ -36,6 +45,21 @@
             'install_path' => __DIR__ . '/../nikic/fast-route',
             'aliases' => array(),
             'dev_requirement' => false,
+        ),
+        'nyholm/psr7' => array(
+            'pretty_version' => '1.8.2',
+            'version' => '1.8.2.0',
+            'reference' => 'a71f2b11690f4b24d099d6b16690a90ae14fc6f3',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../nyholm/psr7',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'php-http/message-factory-implementation' => array(
+            'dev_requirement' => false,
+            'provided' => array(
+                0 => '1.0',
+            ),
         ),
         'psr/container' => array(
             'pretty_version' => '2.0.2',
@@ -59,6 +83,7 @@
             'dev_requirement' => false,
             'provided' => array(
                 0 => '^1.0',
+                1 => '1.0',
             ),
         ),
         'psr/http-message' => array(
@@ -74,6 +99,7 @@
             'dev_requirement' => false,
             'provided' => array(
                 0 => '^1.0 || ^2.0',
+                1 => '1.0',
             ),
         ),
         'psr/http-server-handler' => array(
@@ -136,6 +162,42 @@
             'reference' => '0cc9dd0f17f61d8131e7df6b84bd344899fe2608',
             'type' => 'library',
             'install_path' => __DIR__ . '/../symfony/polyfill-php80',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tuupola/callable-handler' => array(
+            'pretty_version' => '1.1.0',
+            'version' => '1.1.0.0',
+            'reference' => '0bc7b88630ca753de9aba8f411046856f5ca6f8c',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tuupola/callable-handler',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tuupola/http-factory' => array(
+            'pretty_version' => '1.4.0',
+            'version' => '1.4.0.0',
+            'reference' => 'ae3f8fbdd31cf2f1bbe920b38963c5e4d1e9c454',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tuupola/http-factory',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tuupola/slim-basic-auth' => array(
+            'pretty_version' => '3.4.0',
+            'version' => '3.4.0.0',
+            'reference' => '4f3061cd1632a28aa7342495011b3467fe0fe1d1',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tuupola/slim-basic-auth',
+            'aliases' => array(),
+            'dev_requirement' => false,
+        ),
+        'tuupola/slim-jwt-auth' => array(
+            'pretty_version' => '3.8.0',
+            'version' => '3.8.0.0',
+            'reference' => '7829d4482034e9eb5e051f3a1619db0c704ba7e7',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../tuupola/slim-jwt-auth',
             'aliases' => array(),
             'dev_requirement' => false,
         ),
