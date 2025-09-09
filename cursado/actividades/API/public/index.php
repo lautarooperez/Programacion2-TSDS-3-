@@ -3,78 +3,83 @@
 use Psr\Http\Message\ResponseInterface as Response;
 use Psr\Http\Message\ServerRequestInterface as Request;
 use Slim\Factory\AppFactory;
-//use Tuupola\Middleware\HttpBasicAuthentication;
+//Autenticacion toker
 use Tuupola\Middleware\JwtAuthentication;
 use Firebase\JWT\JWT;
- 
-/* require __DIR__ . '/../vendor/autoload.php';
 
 
-$app = AppFactory::create();
-$app->add(new HttpBasicAuthentication([
-    "path" => "/",
-    "users" => [
-        "user" => "123456"
-    ],
-    "secure" => false
-]));
-$app->get('/protected', function (Request $request, Response $response, $args) {
-    $response->getBody()->write("Ruta protegida accesible");
-    return $response;
-});
-$app->get('/persona', function (Request $request, Response $response) {
-    $data = array('name' => 'lautaro', 'edad' => 20);
-    $payload = json_encode($data);
-
-    $response->getBody()->write($payload);
-    return $response
-          ->withHeader('Content-Type', 'application/json');
-}); */
-
+//---------------------
+//RUTAS
+//---------------------
 require __DIR__ . '/../vendor/autoload.php';
 require 'conexion.php';
-require 'autorizacion.php';
+require 'roles.php';
 
 $app = AppFactory::create();
 $app->addBodyParsingMiddleware();
-// Ruta de login para emitir token
-$app->post('/login', function (Request $request, Response $response) {
-    $data = $request->getParsedBody();
-    $username = $data['username'] ?? '';
-    $password = $data['password'] ?? '';
 
-    if ($username == 'e3' && $password == 'password') {
-        $key = "your_secret_key";
-        $payload = [
-            "iss" => "example.com",
-            "aud" => "example.com",
-            "iat" => time(),
-            "nbf" => time(),
-            "exp" => time() + 3600,
-            "data" => [
-                "username" => $username
-            ]
-        ];
-        $token = JWT::encode($payload, $key, 'HS256');
-        $response->getBody()->write(json_encode(["token" => $token]));
-    } else {
-        $response->getBody()->write("Credenciales inválidas");
-        return $response->withStatus(401);
+
+//-------------------------------------------------------
+// RUTA DE LOGIN PARA GENERAR TOKEN (PARA USER O ADMIN)
+//-------------------------------------------------------
+
+$app->post('/login', function (Request $request, Response $response) {
+$header = $request->getHeaderLine('Authorization');
+
+    //validar qu el ancabezado empiece con Basic, sino entra al if y tira error 
+    if (strpos($header, 'Basic ') !== 0) {
+        $response->getBody()->write(json_encode(["error" => "Falta encabezado Authorization"]));
+        return $response->withStatus(400)->withHeader('Content-Type', 'application/json');
     }
+
+    // Decodificar credenciales  (quitar Basic) y comvertir a texto
+    $solocredenciales = substr($header, 6);     //6: para empezar en la posicion 6 (Basic)
+    $textocredenciales = base64_decode($solocredenciales);
+
+    // Separar usuario y contraseña
+    $partes = explode(':', $textocredenciales, 2);
+    $username = $partes[0];
+    $password = $partes[1];
+    
+    if ($username == 'e3' && $password == '123') {
+        $role = 'admin';
+    } elseif ($username == 'User1' && $password == '1234') {
+        $role = 'user';
+    } else {
+        $response->getBody()->write(json_encode(["error" => "Credenciales inválidas"]));
+        return $response->withStatus(401)->withHeader('Content-Type', 'application/json');
+    }
+
+    // Generar token JWT
+    $key = "your_secret_key";      
+    $payload = [
+        "iss" => "example.com",
+        "aud" => "example.com",
+        "iat" => time(),
+        "nbf" => time(),
+        "exp" => time() + 3600,
+        "data" => [
+            "username" => $username,
+            "role" => $role
+        ]
+    ];
+
+    $token = JWT::encode($payload, $key, 'HS256');
+    $response->getBody()->write(json_encode(["token" => $token]));
     return $response->withHeader('Content-Type', 'application/json');
 });
+
 
 // Middleware JWT
 $app->add(new JwtAuthentication([
     "secret" => "your_secret_key",
     "attribute" => "token",
-    "path" => "/",
-    "ignore" => ["API/public/login"],
+    "path" => ["/"],
+    "ignore" => ["/programacionII/cursado/API/public/login"],
     "algorithm" => ["HS256"],
     "secure" => false
     
 ]));
-
 // Ruta protegida
 $app->get('/protected', function (Request $request, Response $response) {
     $token = $request->getAttribute('token');
@@ -82,24 +87,43 @@ $app->get('/protected', function (Request $request, Response $response) {
     $response->getBody()->write("Hola, $username");
     return $response;
 });
+$app->get('/persona', function (Request $request, Response $response)use ($pdo) {
+    try {
+        $stmt=$pdo->query("SELECT * FROM persona");
+        $persona = $stmt->fetchAll();
 
-/*$app->post('/persona', function (Request $request, Response $response) {
- $body = $request->getBody()->getContents();
-    $data = json_decode($body, true); 
+        $response->getBody()->write(json_encode($persona));
+        return $response->withHeader ('content-type', 'application/jason');        
+    } catch (PDOException $e) {
+        $error = ['error'=> e->getMenssage()];
+    }
+});
+$app->post('/persona', function (Request $request, Response $response) use ($pdo) {
+    $data = json_decode($request->getBody(), true);
 
-    $nombre = $data['nombre'] ?? 'Sin nombre';
-    $edad = $data['edad'] ?? 'Sin edad';
+    $sql = "INSERT INTO persona (nombre, edad) VALUES (:nombre, :edad)";
+    $stmt = $pdo->prepare($sql);
 
-    // respuesta
-    $respuesta = [
-        'mensaje' => 'La persona es:',
-        'nombre' => $nombre,
-        'edad' => $edad
-    ];
+    try {
+        $stmt->execute([
+            ':nombre' => $data['nombre'],
+            ':edad' => $data['edad']
+        ]);
 
-    $response->getBody()->write(json_encode($respuesta));
+        $response->getBody()->write(json_encode(['message' => 'Persona creada']));
+        return $response->withHeader('Content-Type', 'application/json')->withStatus(201);
+    } catch (PDOException $e) {
+        $error = ['error' => $e->getMessage()];
+    }
+});
+$app->delete('/persona/{nombre}', function ($request, $response, $args) use ($pdo) {
+    $nombre = $args['nombre'];
+    $stmt = $pdo->prepare("DELETE FROM persona WHERE nombre = :nombre");
+    $stmt->execute([':nombre' => $nombre]);
+    $response->getBody()->write(json_encode(['message' => 'persona eliminado']));
     return $response->withHeader('Content-Type', 'application/json');
-});*/
+})->add(new RoleMiddleware(['admin'])); 
+
 
 $app->addErrorMiddleware(true,true,true);
 $app->setBasePath('/programacionII/cursado/API/public');
