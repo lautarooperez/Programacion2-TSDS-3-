@@ -1,0 +1,798 @@
+{
+	"info": {
+		"_postman_id": "6eb23e5b-7446-4c0a-b558-b6d1a579332f",
+		"name": "Api-chipana",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "45364389"
+	},
+	"item": [
+		{
+			"name": "Clientes",
+			"item": [
+				{
+					"name": "todos los clientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU4NDAyLCJuYmYiOjE3NjIyNTg0MDIsImV4cCI6MTc2MjM0NDgwMiwiZGF0YSI6eyJ1c2VybmFtZSI6ImxhdXRhcm8iLCJyb2xlIjoiQWRtaW4ifX0.kFgPN8gfv0CJeGEdAcg2fKCSo9WkgcZ4kqY06Q6mx7U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/clientes",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear clientes",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU4NDAyLCJuYmYiOjE3NjIyNTg0MDIsImV4cCI6MTc2MjM0NDgwMiwiZGF0YSI6eyJ1c2VybmFtZSI6ImxhdXRhcm8iLCJyb2xlIjoiQWRtaW4ifX0.kFgPN8gfv0CJeGEdAcg2fKCSo9WkgcZ4kqY06Q6mx7U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"joaquin\",\r\n        \"apellido\": \"flores\",\r\n        \"telefono\": \"343546555\",\r\n        \"direccion\": \"genova 144\",\r\n        \"email\": \"joaquin.flores@institutozonaoeste.edu.ar\",\r\n        \"deuda\": \"2555.00\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/clientes",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"clientes"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar cliente",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU4NDAyLCJuYmYiOjE3NjIyNTg0MDIsImV4cCI6MTc2MjM0NDgwMiwiZGF0YSI6eyJ1c2VybmFtZSI6ImxhdXRhcm8iLCJyb2xlIjoiQWRtaW4ifX0.kFgPN8gfv0CJeGEdAcg2fKCSo9WkgcZ4kqY06Q6mx7U",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"joaquin\",\r\n        \"apellido\": \"flore\",\r\n        \"telefono\": \"343544455\",\r\n        \"direccion\": \"genova 1444\",\r\n        \"email\": \"joaquin.flores@institutozonaoeste.edu.ar\",\r\n        \"deuda\": \"2555.00\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/clientes/5",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"clientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk\"",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"joaquin\",\r\n        \"apellido\": \"flores\",\r\n        \"telefono\": \"343546555\",\r\n        \"direccion\": \"genova 144\",\r\n        \"email\": \"joaquin.flores@institutozonaoeste.edu.ar\",\r\n        \"deuda\": \"2555.00\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/clientes/5",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"clientes",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "formasPago",
+			"item": [
+				{
+					"name": "todas las formas de pago",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"joaquin\",\r\n        \"apellido\": \"flores\",\r\n        \"telefono\": \"343546555\",\r\n        \"direccion\": \"genova 144\",\r\n        \"email\": \"joaquin.flores@institutozonaoeste.edu.ar\",\r\n        \"deuda\": \"2555.00\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/formaspago",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"formaspago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "crear forma de pago",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"descripcion\": \"efectivo\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/formaspago",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"formaspago"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "New Request",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"descripcion\": \"debito\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/formaspago/6",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"formaspago",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar una forma de pago",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "  {\r\n        \"descripcion\": \"debito\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/formaspago/6",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"formaspago",
+								"6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "productos",
+			"item": [
+				{
+					"name": "todos los productos",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "crear un producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"descripcion\": \"Producto Prueba223\",\r\n        \"stock\": \"10.00\",\r\n        \"id_proveedor\": \"1\",\r\n        \"precio\": \"1500.00\",\r\n        \"costo\": \"3000.00\",\r\n        \"fecha_cad\": \"2026-12-15\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productos",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productos"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar un producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"descripcion\": \"Producto Prueba523\",\r\n        \"stock\": \"10.00\",\r\n        \"id_proveedor\": \"1\",\r\n        \"precio\": \"1500.00\",\r\n        \"costo\": \"3000.00\",\r\n        \"fecha_cad\": \"2026-12-15\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productos/17",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productos",
+								"17"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar un producto",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"descripcion\": \"Producto Prueba523\",\r\n        \"stock\": \"10.00\",\r\n        \"id_proveedor\": \"1\",\r\n        \"precio\": \"1500.00\",\r\n        \"costo\": \"3000.00\",\r\n        \"fecha_cad\": \"2026-12-15\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productos/17",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productos",
+								"17"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "proveedores",
+			"item": [
+				{
+					"name": "todos los proveedores",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "crear un proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"Ivocorp\",\r\n        \"telefono\": \"1242675\",\r\n        \"email\": \"ivan.moreno@institutozonaoeste.edu.ar\",\r\n        \"direccion\": \"mi fraga\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/proveedores",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"proveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "actualizar un proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"laucorp\",\r\n        \"telefono\": \"1242675\",\r\n        \"email\": \"ivan.moreno@institutozonaoeste.edu.ar\",\r\n        \"direccion\": \"mi fraga\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/proveedores/5",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"proveedores",
+								"5"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "eliminar un proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"laucorp\",\r\n        \"telefono\": \"1242675\",\r\n        \"email\": \"ivan.moreno@institutozonaoeste.edu.ar\",\r\n        \"direccion\": \"mi fraga\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/proveedores/5",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"proveedores",
+								"5"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "consultas",
+			"item": [
+				{
+					"name": "productosxProveedores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\r\n        \"nombre\": \"laucorp\",\r\n        \"telefono\": \"1242675\",\r\n        \"email\": \"ivan.moreno@institutozonaoeste.edu.ar\",\r\n        \"direccion\": \"mi fraga\"\r\n    }"
+						},
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productosproveedores",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productosproveedores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productosmasvendidos x fechas",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productosmasvendidos/14-10-2024/16-10-2024",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productosmasvendidos",
+								"14-10-2024",
+								"16-10-2024"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "ventas x fecha",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/ventaporfecha/14-10-2024/16-10-2024",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"ventaporfecha",
+								"14-10-2024",
+								"16-10-2024"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productos x proveedor",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productoproveedor/2",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productoproveedor",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "productos fecha cad",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJleGFtcGxlLmNvbSIsImF1ZCI6ImV4YW1wbGUuY29tIiwiaWF0IjoxNzYyMjU5Njc4LCJuYmYiOjE3NjIyNTk2NzgsImV4cCI6MTc2MjM0NjA3OCwiZGF0YSI6eyJ1c2VybmFtZSI6Iml6byIsInJvbGUiOiJhZG1pbiJ9fQ.Iez9UvRR-CefcLKYrcyRfYk3T6FbNnNyWNusUZtavXk",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://172.16.202.232/api-chipana/public/productofechacaducidad/14-10-2024/16-10-2026",
+							"protocol": "http",
+							"host": [
+								"172",
+								"16",
+								"202",
+								"232"
+							],
+							"path": [
+								"api-chipana",
+								"public",
+								"productofechacaducidad",
+								"14-10-2024",
+								"16-10-2026"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "generar token",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}
